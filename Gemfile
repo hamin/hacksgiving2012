@@ -10,7 +10,7 @@ gem 'sqlite3', group: :test
 gem 'pg', group: :production
 
 gem 'devise'
-gem 'sidekiq'
+gem 'sidekick'
 
 
 # Gems used only for assets and not required
@@ -21,6 +21,8 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+  gem "therubyracer"
+  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
   gem 'execjs'
   gem 'uglifier', '>= 1.0.3'

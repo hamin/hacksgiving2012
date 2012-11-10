@@ -40,9 +40,6 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
-    celluloid (0.12.3)
-      facter (>= 1.6.12)
-      timers (>= 1.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -50,16 +47,17 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
-    connection_pool (0.9.2)
+    commonjs (0.2.6)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    em-dir-watcher (0.9.4)
     erubis (2.7.0)
+    eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    facter (1.6.14)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -67,6 +65,12 @@ GEM
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.6)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
+    libv8 (3.3.10.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -101,28 +105,24 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    redis (3.0.2)
-    redis-namespace (1.2.1)
-      redis (~> 3.0.0)
     sass (3.2.3)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    sidekiq (2.5.2)
-      celluloid (~> 0.12.0)
-      connection_pool (~> 0.9.2)
-      multi_json (~> 1)
-      redis (~> 3)
-      redis-namespace
+    sidekick (0.7.0)
+      em-dir-watcher
+      eventmachine
+      tilt (>= 1)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.6)
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
     thor (0.16.0)
     tilt (1.3.3)
-    timers (1.0.1)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -141,10 +141,12 @@ DEPENDENCIES
   devise
   execjs
   jquery-rails
+  less-rails
   pg
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
-  sidekiq
+  sidekick
   sqlite3
+  therubyracer
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
