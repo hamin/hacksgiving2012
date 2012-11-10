@@ -1,4 +1,11 @@
 Hacksgiving2012::Application.routes.draw do
+  
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  
+
+
+
   devise_for :users
 
   # The priority is based upon order of creation:
