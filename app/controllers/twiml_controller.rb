@@ -9,8 +9,9 @@ class TwimlController < ApplicationController
 		  r.Say 'hello there', :voice => 'woman'
 		end
 
-		# print the result
-		puts response.text
+		respond_to do |format|
+      format.xml { render :xml => response.text }
+    end
 	end
 
 	def sms
