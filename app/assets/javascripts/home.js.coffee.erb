@@ -3,12 +3,11 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready () ->
-	alert 'hello'
 	connection = null
 
 	# accept the incoming connection and start two-way audio
 	call = ->
-	  Twilio.Device.setup("<%= @token %>", {debug: true})
+	  Twilio.Device.setup("#{$('#call').data('token')}", {debug: true})
 	  connection = Twilio.Device.connect()
 	  
 	hangup = ->
