@@ -49,6 +49,14 @@ class TwimlController < ApplicationController
 
 	end
 
+	def enqueue_caller
+		render 'enqueue_user.xml.erb', :content_type => 'text/xml'
+	end
+
+	def wait_url
+		render 'wait_url.xml.erb', :content_type => 'text/xml'
+	end
+
 	def client_call
 		render 'client_call.xml.erb', :content_type => 'text/xml'
 	end
