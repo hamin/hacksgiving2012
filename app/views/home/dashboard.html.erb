@@ -1,5 +1,5 @@
 <%if @campaign %>
-<div class="row">
+<div class="row-fluid">
 	<div class="span10 offset2">
 	<h1><%=@campaign.name%></h1>
 	</div>
@@ -30,3 +30,179 @@
 <% else %>
 	No campaigns at the moment.
 <% end %>
+
+<div class="row-fluid">				
+	<div class="box span4" onTablet="span6" onDesktop="span4">
+		<div class="box-header">
+			<h2><i class="icon-list"></i><span class="break"></span>Weekly Stat</h2>
+			<div class="box-icon">
+				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+			</div>
+		</div>
+		<div class="box-content">
+			<ul class="dashboard-list">
+				<li>
+					<a href="#">
+						<i class="fa-icon-arrow-up green"></i>                               
+						<span class="green">92</span>
+						New Comments                                    
+					</a>
+				</li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-arrow-down red"></i>
+				  <span class="red">15</span>
+				  New Registrations
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-minus blue"></i>
+				  <span class="blue">36</span>
+				  New Articles                                    
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-comment yellow"></i>
+				  <span class="yellow">45</span>
+				  User reviews                                    
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-arrow-up green"></i>                               
+				  <span class="green">112</span>
+				  New Comments                                    
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-arrow-down red"></i>
+				  <span class="red">31</span>
+				  New Registrations
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-minus blue"></i>
+				  <span class="blue">93</span>
+				  New Articles                                    
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fa-icon-comment yellow"></i>
+				  <span class="yellow">254</span>
+				  User reviews                                    
+				</a>
+			  </li>
+			</ul>
+		</div>
+	</div><!--/span-->
+	<div class="box span4" onTablet="span6" onDesktop="span4">
+		<div class="box-header">
+			<h2><i class="icon-user"></i><span class="break"></span>Last Users</h2>
+			<div class="box-icon">
+				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+			</div>
+		</div>
+		<div class="box-content">
+			<ul class="dashboard-list">
+				<li>
+					<a href="#">
+						<img class="avatar" alt="Lucas" src="img/avatar.jpg">
+					</a>
+					<strong>Name:</strong> <a href="#">Łukasz Holeczek</a><br>
+					<strong>Since:</strong> Jul 25, 2012 11:09<br>
+					<strong>Status:</strong> <span class="label label-success">Approved</span>                                  
+				</li>
+				<li>
+					<a href="#">
+						<img class="avatar" alt="Bill" src="img/avatar9.jpg">
+					</a>
+					<strong>Name:</strong> <a href="#">Bill Cole</a><br>
+					<strong>Since:</strong> Jul 25, 2012 11:09<br>
+					<strong>Status:</strong> <span class="label label-warning">Pending</span>                                 
+				</li>
+				<li>
+					<a href="#">
+						<img class="avatar" alt="Jane" src="img/avatar5.jpg">
+					</a>
+					<strong>Name:</strong> <a href="#">Jane Sanchez</a><br>
+					<strong>Since:</strong> Jul 25, 2012 11:09<br>
+					<strong>Status:</strong> <span class="label label-important">Banned</span>                                  
+				</li>
+				<li>
+					<a href="#">
+						<img class="avatar" alt="Kate" src="img/avatar6.jpg">
+					</a>
+					<strong>Name:</strong> <a href="#">Kate Presley</a><br>
+					<strong>Since:</strong> Jul 25, 2012 11:09<br>
+					<strong>Status:</strong> <span class="label label-info">Updates</span>                                  
+				</li>
+			</ul>
+		</div>
+	</div><!--/span-->
+	
+	<div class="box span4 noMargin" onTablet="span12" onDesktop="span4">
+		<div class="box-header">
+			<h2><i class="icon-comment"></i><span class="break"></span>Chats</h2>
+			<div class="box-icon">
+				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
+				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
+			</div>
+		</div>
+		<div class="box-content">
+			<ul class="chat">
+				<li class="left">
+					<img class="avatar" alt="Lucas" src="img/avatar.jpg">
+					<span class="message"><span class="arrow"></span>
+						<span class="from">Łukasz Holeczek</span>
+						<span class="time">Jul 25, 2012 11:09</span>
+						<span class="text">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+						</span>
+					</span>	                                  
+				</li>
+				<li class="right">
+					<img class="avatar" alt="Lucas" src="img/avatar.jpg">
+					<span class="message"><span class="arrow"></span>
+						<span class="from">Łukasz Holeczek</span>
+						<span class="time">Jul 25, 2012 11:08</span>
+						<span class="text">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+						</span>
+					</span>                                  
+				</li>
+				<li class="left">
+					<img class="avatar" alt="Lucas" src="img/avatar.jpg">
+					<span class="message"><span class="arrow"></span>
+						<span class="from">Łukasz Holeczek</span>
+						<span class="time">Jul 25, 2012 11:07</span>
+						<span class="text">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+						</span>
+					</span>	                                  
+				</li>
+				<li class="right">
+					<img class="avatar" alt="Lucas" src="img/avatar.jpg">
+					<span class="message"><span class="arrow"></span>
+						<span class="from">Łukasz Holeczek</span>
+						<span class="time">Jul 25, 2012 11:06</span>
+						<span class="text">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+						</span>
+					</span>	                                  
+				</li>
+			</ul>
+			<div class="chat-form">
+				<textarea></textarea>
+				<button class="btn btn-info">Send message</button>
+			</div>	
+		</div>
+	</div><!--/span-->
+</div>
+<hr>
