@@ -1484,10 +1484,6 @@ input[type="file"],
 	padding: 10px;
 }
 
-.login-box .add-on i{
-	opacity: .1;
-}
-
 .login-box input[type="text"],
 .login-box input[type="password"] {
 	border: 1px solid #eee !important;
