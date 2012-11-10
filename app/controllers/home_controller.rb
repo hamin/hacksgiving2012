@@ -11,5 +11,6 @@ class HomeController < ApplicationController
 		@capability = Twilio::Util::Capability.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
 		@capability.allow_client_outgoing(TWILIO_APP_SID)
 		@token = @capability.generate
+		@pusherkey = Pusher.key
 	end
 end
