@@ -8,6 +8,21 @@ class TwimlController < ApplicationController
 
 	def sms
 		@client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
+		message_body = params["Body"]
+    	from_number = params["From"]
+    	to_number = params["To"]
+    	@campaign = Campaign.find_by_phone_num(to_number)
+    	voice_message = VoiceMessage.new
+    	voice_message.from_num = from_number
+    	voice_message.campaign_id = @campaign.id
+    	voice_message.save
+
+    	@client.account.sms.messages.create(
+        :from => to_number,
+        :to => from_number,
+        :body => "Someone will get back to you as soon as possible."
+      	)
+      	render 'sms.xml.erb', :content_type => 'text/xml'
 	end
 
 	def volunteer_voice
@@ -79,11 +94,13 @@ class TwimlController < ApplicationController
 	end
 
 	def save_recording
+		@campaign = Campaign.find_by_phone_num(params[:To])
 		voice_message = VoiceMessage.new
 		voice_message.voice_message_url = params['RecordingUrl'] 
 		voice_message.recording_time = params['RecordingDuration']
 		voice_message.recording_sid = params['RecordingSid']
 		voice_message.from_num = params['Caller']
+		voice_message.campaign_id = @campaign.id
 		voice_message.save
 		render 'save_recording.xml.erb', :content_type => 'text/xml'
 	end
