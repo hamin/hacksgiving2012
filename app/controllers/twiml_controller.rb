@@ -68,4 +68,11 @@ class TwimlController < ApplicationController
 	def goodbye
 		render 'goodbye.xml.erb', :content_type => 'text/xml'
 	end
+
+	def save_recording
+		recording_url = params['RecordingUrl'] 
+		recording_time = params['RecordingDuration']
+		recording_sid = params['RecordingSid']
+		render 'save_recording.xml.erb', :content_type => 'text/xml'
+	end
 end
