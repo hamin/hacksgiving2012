@@ -4,31 +4,8 @@
 	<h1><%=@campaign.name%></h1>
 	</div>
 </div>
-
-
-<div class="row">
-<div class="span4">
-
-</div>	
-<div class="span4">
-<button id="call" data-token="<%= @token %>" data-pusherkey="<%= @pusherkey %>">
-
-  Call
-</button>
-
-<button id="hangup">
-  Hangup
-</button>
-
-<div id="log">Loading pigeons...</div>
-</div>
-<div class="span4">
-	Widget3
-</div>
-</div>
-
 <div class="row-fluid">				
-	<div class="box span4" onTablet="span6" onDesktop="span4">
+	<div class="box span5" onTablet="span6" onDesktop="span4">
 		<div class="box-header">
 			<h2><i class="icon-list"></i><span class="break"></span>VoiceMail</h2>
 			<div class="box-icon">
@@ -104,7 +81,7 @@
 			</ul>
 		</div>
 	</div><!--/span-->
-	<div class="box span4" onTablet="span6" onDesktop="span4">
+	<div class="box span3" onTablet="span6" onDesktop="span4">
 		<div class="box-header">
 			<h2><i class="icon-user"></i><span class="break"></span>Last Users</h2>
 			<div class="box-icon">
@@ -113,44 +90,20 @@
 			</div>
 		</div>
 		<div class="box-content">
-			<ul class="dashboard-list">
-				<li>
-					<a href="#">
-						<img class="avatar" alt="Lucas" src="img/avatar.jpg">
-					</a>
-					<strong>Name:</strong> <a href="#">Łukasz Holeczek</a><br>
-					<strong>Since:</strong> Jul 25, 2012 11:09<br>
-					<strong>Status:</strong> <span class="label label-success">Approved</span>                                  
-				</li>
-				<li>
-					<a href="#">
-						<img class="avatar" alt="Bill" src="img/avatar9.jpg">
-					</a>
-					<strong>Name:</strong> <a href="#">Bill Cole</a><br>
-					<strong>Since:</strong> Jul 25, 2012 11:09<br>
-					<strong>Status:</strong> <span class="label label-warning">Pending</span>                                 
-				</li>
-				<li>
-					<a href="#">
-						<img class="avatar" alt="Jane" src="img/avatar5.jpg">
-					</a>
-					<strong>Name:</strong> <a href="#">Jane Sanchez</a><br>
-					<strong>Since:</strong> Jul 25, 2012 11:09<br>
-					<strong>Status:</strong> <span class="label label-important">Banned</span>                                  
-				</li>
-				<li>
-					<a href="#">
-						<img class="avatar" alt="Kate" src="img/avatar6.jpg">
-					</a>
-					<strong>Name:</strong> <a href="#">Kate Presley</a><br>
-					<strong>Since:</strong> Jul 25, 2012 11:09<br>
-					<strong>Status:</strong> <span class="label label-info">Updates</span>                                  
-				</li>
-			</ul>
+		<button id="call" data-token="<%= @token %>" data-pusherkey="<%= @pusherkey %>">
+
+  Call
+</button>
+
+<button id="hangup">
+  Hangup
+</button>
+
+<div id="log">Loading pigeons...</div>
 		</div>
 	</div><!--/span-->
 
-	<div class="box span4" onTablet="span6" onDesktop="span4">
+	<div class="box span6" onTablet="span6" onDesktop="span4">
 		<div class="box-header">
 			<h2><i class="icon-comments-alt"></i><span class="break"></span>Last Text Messages</h2>
 			<div class="box-icon">
