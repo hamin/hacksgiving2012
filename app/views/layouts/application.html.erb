@@ -28,10 +28,17 @@
               <% unless user_signed_in?%>
                 <li class="divider"></li>
                 <li><%= link_to "Log in", "#login_modal", :id => 'loginModal', "data-toggle" => "modal"%>
-                <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li><%= link_to "Sign in", "#signin_modal", :id => 'signinModal', "data-toggle" => "modal"%>              
               <% else %>
-                <li class="divider"></li>
-                <li><%= link_to "Sign out", destroy_user_session_path %></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <%=current_user.email%>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
+                </ul>
+       
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -58,6 +65,8 @@
       </footer>
 
     </div> <!-- /container -->
+
+  <% unless user_signed_in?%>  
     <!-- Login and sign up modal windows-->
   <div class="login-box modal hide fade" id="login_modal" tabindex="-1" role="dialog">
     <div class="modal-header">
@@ -69,7 +78,7 @@
       <fieldset>
         <div class="input-prepend" title="Username">
           <span class="add-on">
-            <i class="icon-user"></i>
+            <i class="icon-envelope-alt"></i>
           </span>
           <input class="input-large" name="user[email]" id="email" type="text" placeholder="type email"/>
         </div>
@@ -85,10 +94,54 @@
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
         <div class="clearfix"></div>  
-    <% end %>
+      <% end %>
+      <h3>Forgot Password?</h3>
+      <p>
+          No problem, <%= link_to "click here", new_password_path(resource_name) %> to get a new password.
+      </p>  
+    </div>
   </div>
-</div>
 
+  <div class="login-box modal hide fade" id="signin_modal" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>Create an account</h3>
+    </div>
+    <div class="modal-body">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => "form-horizontal") do |f| %>
+      <fieldset>
+        <div class="input-prepend" title="Username">
+          <span class="add-on">
+            <i class="icon-envelope-alt"></i>
+          </span>
+          <input class="input-large" name="user[email]" id="email" type="text" placeholder="type email"/>
+        </div>
+        <div class="clearfix"></div>
+        <div class="input-prepend" title="Password">
+          <span class="add-on"><i class="icon-lock"></i></span>
+          <input class="input-large" name="user[password]" id="password" type="password" placeholder="type password"/>
+        </div>
+        <div class="input-prepend" title="Password_confirmation">
+          <span class="add-on"><i class="icon-lock"></i></span>
+          <input class="input-large" name="user[password_confirmation]" id="password" type="password" placeholder="type password confirmation"/>
+        </div>
+        <div class="input-prepend" title="Phone_number">
+          <span class="add-on">
+            <i class="icon-phone"></i>
+          </span>
+          <input class="input-large" name="user[phone_number]" id="phone_number" type="text" placeholder="type phone number"/>
+        </div>
+        <div class="clearfix"></div>
+        <div class="btn-group button-login">  
+          <button type="submit" class="btn btn-primary"><i class="icon-off icon-white"></i></button>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+        <div class="clearfix"></div>  
+      <% end %>
+      <hr>
+    </div>
+  </div>
+  <% end %>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

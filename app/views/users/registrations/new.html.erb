@@ -1,21 +1,43 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-    <div><%= f.label :phone_number %><br />
-  <%= f.password_field :phone_number %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="row">
+<div class="span7 offset3">
+<div class="login-box" id="signin_modal" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <h3>Create an account</h3>
+    </div>
+    <div class="modal-body">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => "form-horizontal") do |f| %>
+        <%= devise_error_messages! %>
+      <fieldset>
+        <div class="input-prepend" title="Username">
+          <span class="add-on">
+            <i class="icon-envelope-alt"></i>
+          </span>
+          <input class="input-large" name="user[email]" id="email" type="text" placeholder="type email"/>
+        </div>
+        <div class="clearfix"></div>
+        <div class="input-prepend" title="Password">
+          <span class="add-on"><i class="icon-lock"></i></span>
+          <input class="input-large" name="user[password]" id="password" type="password" placeholder="type password"/>
+        </div>
+        <div class="input-prepend" title="Password_confirmation">
+          <span class="add-on"><i class="icon-lock"></i></span>
+          <input class="input-large" name="user[password_confirmation]" id="password" type="password" placeholder="type password confirmation"/>
+        </div>
+        <div class="input-prepend" title="Phone_number">
+          <span class="add-on">
+            <i class="icon-phone"></i>
+          </span>
+          <input class="input-large" name="user[phone_number]" id="phone_number" type="text" placeholder="type phone number"/>
+        </div>
+        <div class="clearfix"></div>
+        <div class="btn-group button-login">  
+          <button type="submit" class="btn btn-primary"><i class="icon-off icon-white"></i></button>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+        <div class="clearfix"></div>  
+      <% end %>
+      <hr>
+    </div>
+  </div>
+</div>
+</div>
