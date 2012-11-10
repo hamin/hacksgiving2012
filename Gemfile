@@ -11,6 +11,7 @@ gem 'pg', group: :production
 
 gem 'devise'
 gem 'sidekick'
+gem 'twilio-ruby'
 
 
 # Gems used only for assets and not required
