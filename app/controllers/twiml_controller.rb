@@ -103,6 +103,8 @@ class TwimlController < ApplicationController
 		voice_message.from_num = params['Caller']
 		voice_message.campaign_id = @campaign.id
 		voice_message.save
+
+		Pusher['dashboard-events'].trigger('new-voicemail', {:message => voice_message.as_json} )
 		render 'save_recording.xml.erb', :content_type => 'text/xml'
 	end
 end

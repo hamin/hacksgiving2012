@@ -20,3 +20,11 @@ $(document).ready () ->
 	$("#hangup").click (e) ->
 	  e.preventDefault()
 	  hangup()
+
+
+	# Pusher events
+	pusher = new Pusher("#{$('#call').data('pusherkey')}") # Replace with your app key
+	channel = pusher.subscribe("dashboard-events")
+
+	channel.bind "new-voicemail", (data) ->
+	  console.log "An event was triggered with message: " + data.message
