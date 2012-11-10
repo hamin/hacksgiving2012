@@ -9,9 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap_and_overrides
- *= require chosen
- *= require elfinder.min
- *= require elfinder.theme
-
+ *= require_tree .
+ *= uploadify
  */
