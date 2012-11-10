@@ -9,6 +9,7 @@ Hacksgiving2012::Application.routes.draw do
   devise_for :users
 
   match 'twiml/voice' => 'twiml#voice'
+  match 'twiml/volunteer_voice' => 'twiml#volunteer_voice'
   match 'twiml/sms' => 'twiml#sms'
   match 'twiml/volunteer' => 'twiml#volunteer'
   match 'twiml/voicemail' => 'twiml#voicemail'
