@@ -30,7 +30,7 @@
 <div class="row-fluid">				
 	<div class="box span4" onTablet="span6" onDesktop="span4">
 		<div class="box-header">
-			<h2><i class="icon-list"></i><span class="break"></span>Weekly Stat</h2>
+			<h2><i class="icon-list"></i><span class="break"></span>VoiceMail</h2>
 			<div class="box-icon">
 				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
 				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
@@ -38,7 +38,12 @@
 		</div>
 		<div class="box-content">
 			<ul class="dashboard-list">
-				<li>
+				<% VoiceMessage.all.each do |vm| %>
+					<audio controls="controls">  
+   					<source src="<%= vm.video_message_url %>"  />  
+					</audio> 
+				<% end %>
+<!-- 				<li>
 					<a href="#">
 						<i class="fa-icon-arrow-up green"></i>                               
 						<span class="green">92</span>
@@ -93,7 +98,7 @@
 				  <span class="yellow">254</span>
 				  User reviews                                    
 				</a>
-			  </li>
+			  </li> -->
 			</ul>
 		</div>
 	</div><!--/span-->
