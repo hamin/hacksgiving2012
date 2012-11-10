@@ -80,10 +80,10 @@ class TwimlController < ApplicationController
 
 	def save_recording
 		voice_message = VoiceMessage.new
-		voice_message.recording_url = params['RecordingUrl'] 
+		voice_message.voice_message_url = params['RecordingUrl'] 
 		voice_message.recording_time = params['RecordingDuration']
 		voice_message.recording_sid = params['RecordingSid']
-		voice_message.from_num = params['caller_number']
+		voice_message.from_num = params['Caller']
 		voice_message.save
 		render 'save_recording.xml.erb', :content_type => 'text/xml'
 	end
