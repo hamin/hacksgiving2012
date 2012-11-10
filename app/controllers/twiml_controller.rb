@@ -29,7 +29,19 @@ class TwimlController < ApplicationController
 	end
 
 	def send_sms
+		to = params[:to]
+		body = params[:message]
+		campaign = Campaign.find :first
 
+		@client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
+
+		@client.account.sms.messages.create(
+      :from => campaign.phone_num,
+      :to => to,
+      :body => body
+    	)
+		
+		redirect_to :controller => "home", :action => "dashboard"
 	end
 
 	def modal_sms
