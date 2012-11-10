@@ -1,16 +1,13 @@
+
 <Response>
-    <Say>Hello Monkey</Say>
-</Response>
-
-
-<!-- <Response>
-    <Gather action="handle-user-input.php" numDigits="1">
+    <Gather action="/twiml/ivr" numDigits="1">
         <Say>Welcome to Emergency Volunteer Helpline</Say>
         <Say>To contact a Volunteer, press 1.</Say>
         <Say>To speak to leave a voicemail for us to get back to you, press 2.</Say>
-        <Say>To signup for our broadcast messages, press 3.</Say>
-    </Gather> -->
+        <Say>To subscribe to our broadcast messages, press 3.</Say>
+        <Say>Hang up at any time to end your call.</Say>
+    </Gather>
     <!-- If customer doesn't input anything, prompt and try again. -->
-<!--     <Say>Sorry, I didn't get your response.</Say>
-    <Redirect>handle-incoming-call.xml</Redirect>
-</Response> -->
+    <Say>Sorry, I didn't get your response.</Say>
+    <Redirect>/twiml/voice</Redirect>
+</Response>

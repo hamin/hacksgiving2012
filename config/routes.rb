@@ -10,6 +10,13 @@ Hacksgiving2012::Application.routes.draw do
 
   match 'twiml/voice' => 'twiml#voice'
   match 'twiml/sms' => 'twiml#sms'
+  match 'twiml/volunteer' => 'volunteer'
+  match 'twiml/voicemail' => 'voicemail'
+  match 'twiml/subscribe' => 'subscribe'
+  match 'twiml/goodbye' => 'goodbye'
+  match 'twiml/phone_call' => 'phone_call'
+  match 'twiml/client_call' => 'client_call'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
