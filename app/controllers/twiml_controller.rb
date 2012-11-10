@@ -13,7 +13,7 @@ class TwimlController < ApplicationController
     	to_number = params["To"]
     	@campaign = Campaign.find_by_phone_num(to_number)
     	voice_message = VoiceMessage.new
-    	voice_message.from_num = from_num
+    	voice_message.from_num = from_number
     	voice_message.campaign_id = @campaign.id
     	voice_message.save
 
