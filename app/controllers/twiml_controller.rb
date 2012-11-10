@@ -12,14 +12,12 @@ class TwimlController < ApplicationController
     	from_number = params["From"]
     	to_number = params["To"]
     	@campaign = Campaign.find_by_phone_num(to_number)
-    	
     	sms_message = SmsMessage.new
     	sms_message.from_num = from_number
     	sms_message.to_num  = to_number
     	sms_message.body = message_body
     	sms_message.campaign_id = @campaign.id
     	sms_message.save
-
     	@client.account.sms.messages.create(
         :from => to_number,
         :to => from_number,

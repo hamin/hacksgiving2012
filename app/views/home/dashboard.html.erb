@@ -1,3 +1,16 @@
+<%if @campaign %>
+<div class="row">
+	<div class="span10 offset2">
+	<h1><%=@campaign.name%></h1>
+	</div>
+</div>
+<div class="row">
+<div class="span4">
+	<% @campaign.sms_messages.each do |sms| %>
+		<%=sms.body %>
+	<% end %>
+</div>	
+<div class="span4">
 <button id="call" data-token="<%= @token %>">
   Call
 </button>
@@ -7,3 +20,12 @@
 </button>
 
 <div id="log">Loading pigeons...</div>
+</div>
+<div class="span4">
+	Widget3
+</div>
+</div>
+
+<% else %>
+	No campaigns at the moment.
+<% end %>
