@@ -39,9 +39,11 @@
 		<div class="box-content">
 			<ul class="dashboard-list">
 				<% VoiceMessage.all.each do |vm| %>
-					<audio controls="controls">  
-   					<source src="<%= vm.video_message_url %>"  />  
-					</audio> 
+					<li>
+						<audio controls="controls">  
+	   					<source src="<%= vm.video_message_url %>"  />  
+						</audio>
+					</li>	
 				<% end %>
 <!-- 				<li>
 					<a href="#">
