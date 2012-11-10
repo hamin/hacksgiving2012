@@ -1,16 +1,15 @@
 <%if @campaign %>
 <div class="row-fluid">
 	<div class="span10 offset2">
-	<h1><%=@campaign.name%></h1>
+	<h1><%=@campaign.name%> - <%=@campaign.phone_num%></h1>
 	</div>
 </div>
 <div class="row-fluid">				
 	<div class="box span5" onTablet="span6" onDesktop="span4">
 		<div class="box-header">
-			<h2><i class="icon-list"></i><span class="break"></span>VoiceMail</h2>
+			<h2><i class="icon-play"></i><span class="break"></span>VoiceMail</h2>
 			<div class="box-icon">
 				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
 			</div>
 		</div>
 		<div class="box-content">
@@ -83,24 +82,21 @@
 	</div><!--/span-->
 	<div class="box span3" onTablet="span6" onDesktop="span4">
 		<div class="box-header">
-			<h2><i class="icon-user"></i><span class="break"></span>Last Users</h2>
+			<h2><i class="icon-phone"></i><span class="break"></span>Join the hotline</h2>
 			<div class="box-icon">
 				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
 			</div>
 		</div>
 		<div class="box-content">
-		<button id="call" data-token="<%= @token %>" data-pusherkey="<%= @pusherkey %>">
+		<button id="call" data-token="<%= @token %>" data-pusherkey="<%= @pusherkey %>" class="btn btn-success">
 
-  Call
+  Get on call
 </button>
 
-<button id="hangup">
+<button id="hangup" class="btn btn-danger">
   Hangup
 </button>
 
-<div id="log">Loading pigeons...</div>
-		</div>
 	</div><!--/span-->
 
 	<div class="box span6" onTablet="span6" onDesktop="span4">
@@ -117,7 +113,7 @@
 					<li>
 						<i class="icon-comments"></i>
 
-						<%= link_to("Respond", {:controller => 'twiml', :action =>'modal_sms', :id => sms.id}, {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true}) %>
+						<%= link_to("Respond", {:controller => 'twiml', :action =>'modal_sms', :id => sms.id}, {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true, :class => 'btn pull-right'}) %>
 						<span class='avatar img-large'>
 							<i class="icon-comments-alt"></i>
 						</span>
@@ -139,7 +135,7 @@
 <div class="modal hide fade" id="modal-window">
   <div class="modal-header">
     <a href="#" class="close">×</a>
-    <h3>Loading...</h3>
+    <h3>Respond</h3>
   </div>
   <div class="modal-body center">
   </div>
