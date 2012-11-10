@@ -23,7 +23,7 @@ class TwimlController < ApplicationController
 
 		case selection
 		when '1'
-			redirect_to :action => 'volunteer'
+			redirect_to :action => 'enqueue_caller'
 		when '2'
 			redirect_to :action => 'voicemail'
 		when '3'
