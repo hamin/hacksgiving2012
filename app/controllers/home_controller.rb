@@ -14,5 +14,7 @@ class HomeController < ApplicationController
 		#For now just get the first one
 		@campaign = Campaign.find :first
 		@pusherkey = Pusher.key
+
+		# @nyt = []
 	end
 end
