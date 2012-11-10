@@ -37,11 +37,11 @@
 			</div>
 		</div>
 		<div class="box-content">
-			<ul class="dashboard-list">
+			<ul id="voicemail-list" class="dashboard-list">
 				<% VoiceMessage.all.each do |vm| %>
 					<li>
 						<audio controls="controls">  
-	   					<source src="<%= vm.video_message_url %>"  />  
+	   					<source src="<%= vm.voice_message_url %>"  />  
 						</audio>
 					</li>	
 				<% end %>
