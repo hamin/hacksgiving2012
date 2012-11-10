@@ -28,6 +28,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
   gem 'font-awesome-sass-rails'
+  gem 'turbo-sprockets-rails3'
 end
 
 gem 'jquery-rails'

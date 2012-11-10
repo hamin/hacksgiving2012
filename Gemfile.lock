@@ -150,6 +150,9 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    turbo-sprockets-rails3 (0.2.12)
+      railties (>= 3.1.0, < 3.2.9)
+      sprockets (>= 2.0.0)
     twilio-ruby (3.9.0)
       builder (>= 2.1.2)
       jwt (>= 0.1.2)
@@ -182,6 +185,7 @@ DEPENDENCIES
   sidekick
   sqlite3
   therubyracer
+  turbo-sprockets-rails3
   twilio-ruby
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

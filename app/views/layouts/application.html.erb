@@ -27,7 +27,7 @@
             <ul class="nav pull-right">
               <% unless user_signed_in?%>
                 <li class="divider"></li>
-                <li><%= link_to "Sign in", new_user_session_path %></li>
+                <li><%= link_to "Log in", "#login_modal", :id => 'loginModal', "data-toggle" => "modal"%>
                 <li><%= link_to "Sign up", new_user_registration_path %></li>
               <% else %>
                 <li class="divider"></li>
@@ -58,6 +58,36 @@
       </footer>
 
     </div> <!-- /container -->
+    <!-- Login and sign up modal windows-->
+  <div class="login-box modal hide fade" id="login_modal" tabindex="-1" role="dialog">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">×</button>
+      <h3>Login to your account</h3>
+    </div>
+    <div class="modal-body">
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => "form-horizontal") do |f| %>
+      <fieldset>
+        <div class="input-prepend" title="Username">
+          <span class="add-on">
+            <i class="icon-user"></i>
+          </span>
+          <input class="input-large" name="user[email]" id="email" type="text" placeholder="type email"/>
+        </div>
+        <div class="clearfix"></div>
+        <div class="input-prepend" title="Password">
+          <span class="add-on"><i class="icon-lock"></i></span>
+          <input class="input-large" name="user[password]" id="password" type="password" placeholder="type password"/>
+        </div>
+        <div class="clearfix"></div>
+        <label class="remember" for="remember"><input type="checkbox" id="remember" name="user[remember_me]"/>Remember me</label>
+        <div class="btn-group button-login">  
+          <button type="submit" class="btn btn-primary"><i class="icon-off icon-white"></i></button>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        <div class="clearfix"></div>  
+    <% end %>
+  </div>
+</div>
 
     <!-- Javascripts
     ================================================== -->
