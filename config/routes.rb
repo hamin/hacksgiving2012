@@ -16,6 +16,7 @@ Hacksgiving2012::Application.routes.draw do
   match 'twiml/goodbye' => 'twiml#goodbye'
   match 'twiml/phone_call' => 'twiml#phone_call'
   match 'twiml/client_call' => 'twiml#client_call'
+  match 'twiml/ivr' => 'twiml#ivr'
 
 
   # The priority is based upon order of creation:
