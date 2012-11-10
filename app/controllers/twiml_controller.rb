@@ -10,6 +10,14 @@ class TwimlController < ApplicationController
 		@client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
 	end
 
+	def volunteer_voice
+		render 'volunteer_voice.xml.erb', :content_type => 'text/xml'
+	end
+
+	def about_to_connect
+		render 'about_to_connect.xml.erb', :content_type => 'text/xml'
+	end
+
 	def ivr
 		selection = params['Digits']
 
@@ -28,6 +36,7 @@ class TwimlController < ApplicationController
 
 	def volunteer
 		@client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
+		@account = @client.accounts.get(TWILIO_SID)
 
 
 		if @client_participant.present?
