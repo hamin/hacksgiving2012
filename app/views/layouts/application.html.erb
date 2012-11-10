@@ -30,8 +30,15 @@
                 <li><%= link_to "Log in", "#login_modal", :id => 'loginModal', "data-toggle" => "modal"%>
                 <li><%= link_to "Sign in", "#signin_modal", :id => 'signinModal', "data-toggle" => "modal"%>              
               <% else %>
-                <li class="divider"></li>
-                <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <%=current_user.email%>
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>
+                </ul>
+       
               <% end %>
             </ul>
           </div><!--/.nav-collapse -->
