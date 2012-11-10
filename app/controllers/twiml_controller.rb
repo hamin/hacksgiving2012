@@ -9,21 +9,23 @@ class TwimlController < ApplicationController
 	def sms
 		@client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
 		message_body = params["Body"]
-    	from_number = params["From"]
-    	to_number = params["To"]
-    	@campaign = Campaign.find_by_phone_num(to_number)
-    	sms_message = SmsMessage.new
-    	sms_message.from_num = from_number
-    	sms_message.to_num  = to_number
-    	sms_message.body = message_body
-    	sms_message.campaign_id = @campaign.id
-    	sms_message.save
-    	@client.account.sms.messages.create(
-        :from => to_number,
-        :to => from_number,
-        :body => "Someone will get back to you as soon as possible."
-      	)
-      	render 'sms.xml.erb', :content_type => 'text/xml'
+    from_number = params["From"]
+    to_number = params["To"]
+    @campaign = Campaign.find_by_phone_num(to_number)
+    sms_message = SmsMessage.new
+    sms_message.from_num = from_number
+    sms_message.to_num  = to_number
+    sms_message.body = message_body
+    sms_message.campaign_id = @campaign.id
+    sms_message.save
+    @client.account.sms.messages.create(
+      :from => to_number,
+      :to => from_number,
+      :body => "Someone will get back to you as soon as possible."
+    	)
+
+    Pusher['dashboard-events'].trigger('new-sms', {:message => sms_message.as_json} )
+    render 'sms.xml.erb', :content_type => 'text/xml'
 	end
 
 	def send_sms

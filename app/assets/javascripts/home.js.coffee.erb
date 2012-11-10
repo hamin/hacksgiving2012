@@ -30,3 +30,8 @@ $(document).ready () ->
 	  console.log "An event was triggered with message: " + data.message
 	  audioHtml = "<li><audio controls='controls'>  <source src='#{data.message.voice_message_url}'  /></audio></li>"
 	  $('#voicemail-list').append(audioHtml)
+
+	channel.bind "new-sms", (data) ->
+	  console.log "An event was triggered with message: " + data.message
+	  smsHtml = "<li><i class='icon-comments'></i><a href='/twiml/modal_sms?id=#{data.message.id}' data-backdrop='true' data-keyboard='true' data-remote='true' data-target='#modal-window' data-toggle='modal'>Respond</a><span class='avatar img-large'><i class='icon-comments-alt'></i></span><strong>From:</strong>#{data.message.from_num}<br><strong>Message:</strong>#{data.message.body}<br><br></li>"
+	  $('#sms-list').append(smsHtml)	  	  
