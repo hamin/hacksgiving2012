@@ -1,17 +1,10 @@
 class TwimlController < ApplicationController
+	protect_from_forgery :except => :voice
 	skip_before_filter :verify_authenticity_token
 
 	def voice
 		# @client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
-
-		# build up a response
-		response = Twilio::TwiML::Response.new do |r|
-		  r.Say 'hello there', :voice => 'woman'
-		end
-
-		respond_to do |format|
-      format.xml { render :xml => response.text }
-    end
+		render 'voice.xml.erb', :content_type => 'text/xml'
 	end
 
 	def sms
