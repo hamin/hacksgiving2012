@@ -58,6 +58,7 @@ class TwimlController < ApplicationController
 	end
 
 	def voicemail
+		@caller_number = params[:From]
 		render 'voicemail.xml.erb', :content_type => 'text/xml'
 	end
 
@@ -70,9 +71,12 @@ class TwimlController < ApplicationController
 	end
 
 	def save_recording
-		recording_url = params['RecordingUrl'] 
-		recording_time = params['RecordingDuration']
-		recording_sid = params['RecordingSid']
+		voice_message = VoiceMessage.new
+		voice_message.recording_url = params['RecordingUrl'] 
+		voice_message.recording_time = params['RecordingDuration']
+		voice_message.recording_sid = params['RecordingSid']
+		voice_message.from_num = params['caller_number']
+		voice_message.save
 		render 'save_recording.xml.erb', :content_type => 'text/xml'
 	end
 end

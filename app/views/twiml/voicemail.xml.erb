@@ -1,5 +1,5 @@
 <Response>
-    <Say>Please leave a message. Include your name and press any digit to end. Maximum length is three minutes.</Say>
-	<Record action="/twiml/save_recording"/>
+    <Say>Please leave a message. Include your name and press any digit to end.</Say>
+	<Record action="/twiml/save_recording?caller_number=<%=@caller_number%>"/>
     <Say>I did not receive a recording</Say>
 </Response>
