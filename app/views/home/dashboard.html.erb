@@ -142,10 +142,11 @@
 		<ul class="dashboard-list">
 			<%@nyt.each do |element|%>
 			<li>
-				<a href="#">
-					<i class="fa-icon-arrow-up green"></i>                               
-					<span class="green">92</span>
-					New Comments                                    
+				<a href="<%= element['url'] %>">
+					<!-- <i class="fa-icon-arrow-up green"></i> -->
+					<i class="icon-chevron-up"></i>                              
+					<!-- <span class="green">92</span> -->
+					<%= element['title'] %>                                  
 				</a>
 			</li>
 			<%end%>
