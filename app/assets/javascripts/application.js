@@ -31,6 +31,10 @@
 //= require jquery.masonry.min
 //= require jquery.knob
 //= require jquery.sparkline.min
+//= require jquery.flot.min
+//= require jquery.flot.pie.min
+//= require jquery.flot.stack
+//= require jquery.flot.resize.min
 //= require bootstrap
 //= require custom
 //= require excanvas
