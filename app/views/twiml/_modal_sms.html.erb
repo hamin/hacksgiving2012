@@ -3,7 +3,7 @@
 	<%@all_user_messages.each do |sms|%>
 	<%unless sms.user%>
 	<li class="left">
-		<img class="avatar" alt="Caller" src="img/avatar.jpg">
+		<img class="avatar img-polaroid" alt="Caller" src="http://placehold.it/140x140">
 		<span class="message"><span class="arrow"></span>
 			<span class="from"><%=sms.from_num%></span><br>
 			<span class="time"><%=sms.created_at.strftime "%b %e, %l:%M %p"%></span><br>
@@ -14,8 +14,9 @@
 	</li>
 	<%else %>
 	<li class="right">
-		<img class="avatar" alt="Volunteer" src="img/avatar.jpg">
+		<img class="avatar img-polaroid" alt="Volunteer" src="http://placehold.it/140x140">
 		<span class="message"><span class="arrow"></span>
+		<span class="from">Volunteer</span><br>
 	<span class="from"><%=sms.from_num%></span><br>
 			<span class="time"><%=sms.created_at.strftime "%b %e, %l:%M %p"%></span><br>
 			<span class="text">
