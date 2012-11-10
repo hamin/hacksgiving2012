@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  location: MyString
+  phone_num: MyString
+  active: false
+  owner_id: 1
+  starts_at: 2012-11-10 09:45:54
+  ends_at: 2012-11-10 09:45:54
+  twitter_handle: MyString
+  twitter_hashtag: MyString
+
+two:
+  name: MyString
+  description: MyString
+  location: MyString
+  phone_num: MyString
+  active: false
+  owner_id: 1
+  starts_at: 2012-11-10 09:45:54
+  ends_at: 2012-11-10 09:45:54
+  twitter_handle: MyString
+  twitter_hashtag: MyString
