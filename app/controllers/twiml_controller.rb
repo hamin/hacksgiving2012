@@ -40,12 +40,23 @@ class TwimlController < ApplicationController
       :to => to,
       :body => body
     	)
-		
+
+    	 sms_message = SmsMessage.new
+    sms_message.from_num = to
+    sms_message.to_num  = campaign.phone_num
+    sms_message.body = body
+    sms_message.campaign_id = campaign.id
+    sms_message.user_id = current_user.id
+    sms_message.save
+
 		redirect_to :controller => "home", :action => "dashboard"
 	end
 
 	def modal_sms
 		@sms =  SmsMessage.find params[:id]
+
+		# @all_user_messages = SmsMessage.all :conditions => [:from_num => @sms.from_num]
+		@all_user_messages = SmsMessage.where(:from_num => @sms.from_num).all
 	end
 
 	def volunteer_voice

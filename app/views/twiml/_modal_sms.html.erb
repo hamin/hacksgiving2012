@@ -1,5 +1,32 @@
 <%if @sms%>
-<%= form_tag({:controller => 'twiml', :action => 'send_sms'}, {:class => "form-horizontal"}) do |m| %>
+<ul class="chat">
+	<%@all_user_messages.each do |sms|%>
+	<%unless sms.user%>
+	<li class="left">
+		<img class="avatar" alt="Caller" src="img/avatar.jpg">
+		<span class="message"><span class="arrow"></span>
+			<span class="from"><%=sms.from_num%></span><br>
+			<span class="time"><%=sms.created_at.strftime "%b %e, %l:%M %p"%></span><br>
+			<span class="text">
+				<%=sms.body%>
+			</span>
+		</span>	                                  
+	</li>
+	<%else %>
+	<li class="right">
+		<img class="avatar" alt="Volunteer" src="img/avatar.jpg">
+		<span class="message"><span class="arrow"></span>
+	<span class="from"><%=sms.from_num%></span><br>
+			<span class="time"><%=sms.created_at.strftime "%b %e, %l:%M %p"%></span><br>
+			<span class="text">
+				<%=sms.body%>
+			</span>
+		</span>                                  
+	</li>
+	<%end%>
+	<% end %>
+</ul>
+<%= form_tag({:controller => 'twiml', :action => 'send_sms'}, {:class => "form-horizontal chat-form"}) do |m| %>
 <div class="control-group">
 		  <label class="control-label" for="inputPassword"><i class="icon-comments-alt"></i> To</label>
 			<div class="controls">
