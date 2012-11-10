@@ -1,5 +1,5 @@
 class TwimlController < ApplicationController
-	protect_from_forgery, :except => [:voice]
+	protect_from_forgery, :except => :voice
 	skip_before_filter :verify_authenticity_token
 
 	def voice
