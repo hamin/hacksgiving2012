@@ -1,10 +1,10 @@
 <%if @sms%>
 <%= form_tag({:controller => 'twiml', :action => 'send_sms'}, {:class => "form-horizontal"}) do |m| %>
 <div class="control-group">
-		  <label class="control-label" for="inputPassword"><i class="icon-twitter"></i> To</label>
+		  <label class="control-label" for="inputPassword"><i class="icon-comments-alt"></i> To</label>
 			<div class="controls">
 				<div class="input-prepend">
-				  <span class="add-on">@</span><input class="span2" id="prependedInput" size="16" type="text" placeholder="<%=@sms.from_num%>" name="to" value="<%=@sms.from_num%>">
+				  <span class="add-on"><i class="icon-phone-sign"></i></span><input class="span2" id="prependedInput" size="16" type="text" placeholder="<%=@sms.from_num%>" name="to" value="<%=@sms.from_num%>">
 				</div>
 			</div>
 	</div>
