@@ -1,0 +1,23 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
+$(document).ready () ->
+	alert 'hello'
+	connection = null
+
+	# accept the incoming connection and start two-way audio
+	call = ->
+	  Twilio.Device.setup("<%= @token %>", {debug: true})
+	  connection = Twilio.Device.connect()
+	  
+	hangup = ->
+	  connection.disconnect()
+
+	$("#call").click (e) ->
+	  e.preventDefault()
+	  call()
+
+	$("#hangup").click (e) ->
+	  e.preventDefault()
+	  hangup()

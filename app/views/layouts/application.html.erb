@@ -145,10 +145,11 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
     <% unless user_signed_in?%>
       <script type="text/javascript" src="//static.twilio.com/libs/twiliojs/1.0/twilio.min.js"></script>
     <% end %>
+    <%= javascript_include_tag "application" %>
+
 
   </body>
 </html>
