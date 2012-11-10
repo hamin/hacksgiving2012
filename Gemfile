@@ -16,6 +16,7 @@ gem 'pg', group: :production
 gem 'devise'
 gem 'sidekick'
 gem 'twilio-ruby'
+gem "pusher", "~> 0.10.0"
 
 
 # Gems used only for assets and not required
