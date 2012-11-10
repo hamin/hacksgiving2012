@@ -15,6 +15,6 @@ class HomeController < ApplicationController
 		@campaign = Campaign.find :first
 		@pusherkey = Pusher.key
 
-		# @nyt = []
+		@nyt = []
 	end
 end
