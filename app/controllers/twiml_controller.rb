@@ -28,7 +28,16 @@ class TwimlController < ApplicationController
 
 	def volunteer
 		@client = Twilio::REST::Client.new(TWILIO_SID, TWILIO_AUTH_TOKEN)
-		redirect_to :action => 'phone_call'
+
+
+		if @client_participant.present?
+			redirect_to :action => 'client_call'
+		elsif @user = User.available_user
+			redirect_to :action => 'phone_call'
+		else
+			redirect_to :action => 'voicemail'	
+		end
+
 	end
 
 	def client_call
