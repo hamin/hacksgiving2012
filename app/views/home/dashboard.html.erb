@@ -156,10 +156,12 @@
 				<% @campaign.sms_messages.each do |sms| %>
 					<%unless sms.from_num == @campaign.phone_num%>
 					<li>
-						<i class="icon-comments-alt large"></i>
+						<a href="#" class="btn pull-right"><i class="icon-comments"></i> Respond</a>  
+						<span class='avatar img-large'>
+							<i class="icon-comments-alt"></i>
+						</span>
 						<strong>From:</strong><%=sms.from_num%><br>
-						<strong>Message:</strong> <%=sms.body %>
-						           
+						<strong>Message:</strong><%=sms.body %><br><br>    
 					</li>
 					<% end %>  
 				<% end %>
