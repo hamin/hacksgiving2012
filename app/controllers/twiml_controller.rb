@@ -26,6 +26,14 @@ class TwimlController < ApplicationController
       	render 'sms.xml.erb', :content_type => 'text/xml'
 	end
 
+	def send_sms
+
+	end
+
+	def modal_sms
+		@sms =  SmsMessage.find params[:id]
+	end
+
 	def volunteer_voice
 		render 'volunteer_voice.xml.erb', :content_type => 'text/xml'
 	end

@@ -148,7 +148,6 @@
 			<h2><i class="icon-comments-alt"></i><span class="break"></span>Last Text Messages</h2>
 			<div class="box-icon">
 				<a href="#" class="btn-minimize"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn-close"><i class="icon-remove"></i></a>
 			</div>
 		</div>
 		<div class="box-content">
@@ -156,12 +155,12 @@
 				<% @campaign.sms_messages.each do |sms| %>
 					<%unless sms.from_num == @campaign.phone_num%>
 					<li>
-						<a href="#" class="btn pull-right"><i class="icon-comments"></i> Respond</a>  
+						<i class="icon-comments"></i> <%= link_to "Respond", {:controller => 'twiml', :action =>'modal_sms', :id => sms.id}, {:remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true, :class => 'btn pull-right'} %>
 						<span class='avatar img-large'>
 							<i class="icon-comments-alt"></i>
 						</span>
-						<strong>From:</strong><%=sms.from_num%><br>
-						<strong>Message:</strong><%=sms.body %><br><br>    
+						<strong>From:</strong> <%=sms.from_num%><br>
+						<strong>Message:</strong> <%=sms.body %><br><br>    
 					</li>
 					<% end %>  
 				<% end %>
@@ -173,3 +172,14 @@
 <% else %>
 	No campaigns at the moment.
 <% end %>
+
+
+<div class="modal hide fade" id="modal-window">
+  <div class="modal-header">
+    <a href="#" class="close">×</a>
+    <h3>Loading...</h3>
+  </div>
+  <div class="modal-body center">
+  </div>
+  <div class="modal-footer">&nbsp;</div>
+</div>

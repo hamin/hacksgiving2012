@@ -21,6 +21,8 @@ Hacksgiving2012::Application.routes.draw do
   match 'twiml/enqueue_caller' => 'twiml#enqueue_caller'
   match 'twiml/wait_url' => 'twiml#wait_url'
   match 'twiml/save_recording' => 'twiml#save_recording'
+  match 'twiml/send_sms' => 'twiml#send_sms'
+  match 'twiml/modal_sms' => 'twiml#modal_sms'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
