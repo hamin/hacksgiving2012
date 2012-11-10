@@ -18,8 +18,9 @@ Hacksgiving2012::Application.routes.draw do
   match 'twiml/phone_call' => 'twiml#phone_call'
   match 'twiml/client_call' => 'twiml#client_call'
   match 'twiml/ivr' => 'twiml#ivr'
+  match 'twiml/enqueue_caller' => 'twiml#enqueue_caller'
+  match 'twiml/wait_url' => 'twiml#wait_url'
   match 'twiml/save_recording' => 'twiml#save_recording'
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
