@@ -51,6 +51,10 @@ The app will be viewable at `http://localhost:3000`
 
 ## Screenshots ##
 
+![Screenshot 1](https://github.com/hamin/hacksgiving2012/raw/master/screenshot1.png)
+
+![Screenshot 2](https://github.com/hamin/hacksgiving2012/raw/master/screenshot2.png)
+
 
 ## Created By ##
 
