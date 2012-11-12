@@ -15,6 +15,15 @@ Disaster Remote Response a remote disaster response platform where remote volunt
   * [Git](http://git-scm.com/)
   * The [Bundler](http://rubygems.org/gems/bundler) gem. Install with 'gem install bundler'.
 
+When you log into your twilio account, you have to set the Voice and SMS callback urls on the twilio number that you bought and you also have to set the Voice callback url on the twilio TWIML app that you create [here](https://www.twilio.com/user/account/apps). Here is the url you should set it to with respect to your domain:
+
+* Twilio Number Voice URL: http://yourdomain.com/twiml/voice
+
+* Twilio Number SMS URL: http://yourdomain.com/twiml/sms
+
+* Twilio TWIML App Voice URL: http://yourdomain.com/twiml/volunteer_voice
+
+
 ## Installation and usage ##
 
 Use Bundler to install project dependencies for you:
