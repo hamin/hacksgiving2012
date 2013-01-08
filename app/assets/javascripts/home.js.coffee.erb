@@ -28,7 +28,7 @@ $(document).ready () ->
 
 	channel.bind "new-voicemail", (data) ->
 	  console.log "An event was triggered with message: " + data.message
-	  audioHtml = "<li><audio controls='controls'>  <source src='#{data.message.voice_message_url}'  /></audio><span class='green'> #{data.message.from_num} </span></li>"
+	  audioHtml = "<li><audio controls='controls'>  <source src='#{data.message.voice_message_url}'  /></audio> <br/> <span class='green'> #{data.message.from_num} </span></li>"
 	  $('#voicemail-list').append(audioHtml)
 
 	channel.bind "new-sms", (data) ->
