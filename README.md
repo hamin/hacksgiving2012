@@ -74,7 +74,7 @@ Raquel Hernandez - [Github: maggit](http://github.com/maggit), [Twitter: maggit]
 ## Powered By ##
 ![Twilio logo](http://www.twilio.com/packages/company/img/logos_downloadable_round.png)
 
-![Pusher logo](http://a0.twimg.com/profile_images/1710684122/pusher_logo.png)
+![Pusher logo](https://app.pusher.com/assets/logo_login-6a694c6e853d7e0bc752c99ae008c526.png)
 
 ### License ###
 
